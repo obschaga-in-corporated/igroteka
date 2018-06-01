@@ -6,6 +6,7 @@ void Kolichestvo()
 {
     printf("Введите количество монет: ");
     scanf ("%d", &kol);
+    n = kol;
 }
 void Moneti(int n)
 {
@@ -17,3 +18,11 @@ void Moneti(int n)
         b[i] = 0;
     }
 }
+void yousum(int sumyou)
+{
+    sumyou = sumyou + moneta[num];
+    b[num] = 1;
+    n--;
+    if (n == 0) break; 
+}
+
