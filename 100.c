@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-int main ()
 int proverka ( int Count, int Num)
 {
     if (Num < 0 || Num > 10 || Num > Count)
@@ -21,15 +20,6 @@ int output()
         raz=output();
     return raz;
 }
-int games()
-{
-    int Count = 100, Player = 1;
-    while (Count > 0)
-    {
-
-    }
-}
-
 {
 int stroke_user(int Count)
 {
@@ -51,7 +41,37 @@ int stroke_comp(int Count)
         Count -= Num;
     return Count;
 }
+int games()
+{
+    int Count = 100, Player = 1, game, start;
+    while (Count > 0)
+    {
+        if (Player == 1)
+        {
+            Player = 2;
+            start = Count;
+            Count = stroke_user (Count);
+            if (Count == start)
+            {
+                game = output ();
+                if (game == 1)
+                    return 1;
+                else 
+                    return 0;
+            }
+        }
+        else
+        {
+            Player = 1;
+            Count = stroke_comp(Count);
 
+        }
+    }
 
+    rezult (Player);
+    game = output ();
+    if (game == 1)
+        return 1;
+    else 
+        return 0;
 }
-return 0;
