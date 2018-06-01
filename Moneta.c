@@ -73,4 +73,11 @@ void output(int sumyou, int sumcomp)
                 printf("Nichya");
     return 0;
 }
-
+void association(kol, n)
+{
+    srand (time(NULL));
+    Kolichestvo();
+    Moneti(kol);
+    games(n);
+    output(sumyou, sumcomp);
+}
