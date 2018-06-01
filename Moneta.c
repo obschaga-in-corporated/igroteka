@@ -8,7 +8,7 @@ void Kolichestvo()
     scanf ("%d", &kol);
     n = kol;
 }
-void Moneti(int n)
+void Moneti(int kol)
 {
     int *moneta = new int[kol];
     int *b = new int[kol];
@@ -18,14 +18,14 @@ void Moneti(int n)
         b[i] = 0;
     }
 }
-void yousum(int sumyou)
+void yousum(int *b, int *moneta, n)
 {
     sumyou = sumyou + moneta[num];
     b[num] = 1;
     n--;
     if (n == 0) break; 
 }
-void youhod(int num)
+void youhod(int *b)
 {
     printf("Введите номер монеты: ");
     scanf ("%d",&num);
@@ -35,9 +35,9 @@ void youhod(int num)
         scanf ("%d",&num);
     }
 } 
-void comphod(int num)
+void comphod(int kol, int *b)
 {
-    printf("Hod computera: ");
+    printf("Ход компьютера: ");
     num = 0 + rand() % kol;
     while (b[num] == 1)
     {
@@ -45,9 +45,19 @@ void comphod(int num)
         printf("%d\n", num); 
     }
 } 
-void compsum(int sumcomp)
+void compsum(int num, int *b, int n)
 {
     sumcomp = sumcomp + moneta[num];
     b[num] = 1;
     n--; 
 }
+void games(int n)
+{
+    while (n != 0)
+    {
+        youhod(b);
+        yousum(b, moneta, n);
+        comphod(kol, b);
+        compsum(num, b, n);
+    }
+} 
