@@ -12,24 +12,33 @@ int proverka ( int Count, int Num)
     }
     return Num;
 }
+int output()
+{
+    int raz;
+        printf("Если хотите сыграть - введите 1, нет - 0: \n");
+        scanf("%d", &raz);
+        if (raz != 1 && raz !=0)
+        raz=output();
+    return raz;
+}
 int games()
 {
     int Count = 100, Player = 1;
     while (Count > 0)
-{
+    {
 
-}
+    }
 }
 
 {
 int stroke_user(int Count)
 {
     int Num;
-    printf("Ваш ход. На столе %d спичек.\n", Count);
-    printf("Сколько спичек Вы берете?\n");
-    scanf("%d", &Num);
-    Num = proverka (Count, Num);
-    Count -= Num;
+        printf("Ваш ход. На столе %d спичек.\n", Count);
+        printf("Сколько спичек Вы берете?\n");
+        scanf("%d", &Num);
+        Num = proverka (Count, Num);
+        Count -= Num;
     return Count;
 }
 int stroke_comp(int Count)
