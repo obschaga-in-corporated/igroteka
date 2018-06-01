@@ -17,6 +17,16 @@ int power (int n)
     return 2 * power(n - 1);
 }
 
+int output()
+{
+    int raz;
+    printf("Если хотите сыграть - введите 1, нет - 0: \n");
+    scanf("%d", &raz);
+    if (raz != 1 && raz != 0)
+        raz = output();
+    return raz;
+}
+
 int proverka (int answer)
 {  
     if (answer < 0 || answer > 100)
@@ -82,6 +92,15 @@ void games ()
     int answer_user, num = number (), game, answer_comp= 50, tryCount = 0;    
     printf("Введите число: \n");
     scanf("%d", &answer_user);
+    answer_user = proverka (answer_user);
+    if (answer_user == 0)
+    {
+        game = output ();
+        if (game == 1)
+            return 1;
+        else
+            return 0;
+    }
 
     while (answer_user != num && answer_comp != num && tryCount < 5)
     {
@@ -89,6 +108,20 @@ void games ()
         printf ("Количество оставшихся попыток = %d\n", 6-tryCount);
         answer_comp = stroke_comp (answer_comp, num, tryCount);
         answer_user = stroke_user (answer_user, num);
+        if (answer_user == 0)
+        {
+            game = output ();
+            if (game == 1)
+                return 1;
+            else
+                return 0; 
+        }
     }
     rezult (answer_user, answer_comp, num);
+    game=output();
+    if (game == 1)
+        return 1;
+    else
+        return 0;
 }
+
