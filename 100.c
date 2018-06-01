@@ -41,6 +41,13 @@ int stroke_comp(int Count)
         Count -= Num;
     return Count;
 }
+void rezult (int play)
+{
+    if (play == 1)
+        printf("Вы проиграли!\n");
+    else
+        printf("Вы победили!\n");
+}
 int games()
 {
     int Count = 100, Player = 1, game, start;
