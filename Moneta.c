@@ -25,4 +25,13 @@ void yousum(int sumyou)
     n--;
     if (n == 0) break; 
 }
-
+void youhod()
+{
+    printf("Введите номер монеты: ");
+    scanf ("%d",&num);
+    while (b[num] == 1)
+    {
+        printf("Ошибка. Введите номер монеты: ");
+        scanf ("%d",&num);
+    }
+} 
