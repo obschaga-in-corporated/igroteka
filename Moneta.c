@@ -25,7 +25,7 @@ void yousum(int sumyou)
     n--;
     if (n == 0) break; 
 }
-void youhod()
+void youhod(int num)
 {
     printf("Введите номер монеты: ");
     scanf ("%d",&num);
@@ -35,3 +35,19 @@ void youhod()
         scanf ("%d",&num);
     }
 } 
+void comphod(int num)
+{
+    printf("Hod computera: ");
+    num = 0 + rand() % kol;
+    while (b[num] == 1)
+    {
+        num = 0 + rand() % kol;
+        printf("%d\n", num); 
+    }
+} 
+void compsum(int sumcomp)
+{
+    sumcomp = sumcomp + moneta[num];
+    b[num] = 1;
+    n--; 
+}
