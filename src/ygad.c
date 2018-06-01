@@ -54,6 +54,18 @@ int stroke_comp (int answer_comp, int num, int try)
     return answer_comp;
 }
 
+void rezult (int answer_user, int answer_comp, int num)
+{
+    if (answer_user == num && answer_comp != num)
+        printf("Поздравляем! Вы победили! \n"); 
+    if (answer_user != num && answer_comp == num)
+        printf("Вы проиграли! Попробуйте еще раз...\n Правильный ответ: %d\n", num);
+    if (answer_user == num && answer_comp == num)
+        printf("Ничья!\n");
+    if (answer_user != num && answer_comp != num)
+        printf("Никто не выиграл.\n Правильный ответ: %d\n", num); 
+}       
+
 void games ()
 {
     int answer_user, num = number (), game, answer_comp= 50, tryCount = 0;    
@@ -64,7 +76,8 @@ void games ()
     {
         tryCount ++;
         printf ("Количество оставшихся попыток = %d\n", 6-tryCount);
-        answer_comp = stroke_comp(answer_comp, num, tryCount);
-        answer_user = stroke_user(answer_user, num);
+        answer_comp = stroke_comp (answer_comp, num, tryCount);
+        answer_user = stroke_user (answer_user, num);
     }
+    rezult (answer_user, answer_comp, num);
 }
