@@ -20,6 +20,7 @@ int output()
         raz=output();
     return raz;
 }
+{
 int stroke_user(int Count)
 {
     int Num;
