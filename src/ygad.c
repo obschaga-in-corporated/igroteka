@@ -10,7 +10,15 @@ int number ()
     return num;
 }
 
-int stroke_user(int answer_user, int num)
+int power (int n) 
+{
+    if (n == 0) 
+        return 1;
+    return 2 * power(n - 1);
+}
+
+
+int stroke_user (int answer_user, int num)
 {
     if (answer_user > num)
         printf("У вас перелет \n");
