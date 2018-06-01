@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 int main ()
 {
-const int InitialCount = 100;
-int Count, Num, Player;
-return 0;
+
 }
+return 0;
