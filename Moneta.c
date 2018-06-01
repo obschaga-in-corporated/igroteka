@@ -61,3 +61,16 @@ void games(int n)
         compsum(num, b, n);
     }
 } 
+void output(int sumyou, int sumcomp)
+{
+    printf("%d\n%d\n", sumyou, sumcomp);
+    if (sumcomp < sumyou)
+        printf("you win");
+    else
+        if (sumcomp > sumyou)
+            printf("comp win");
+        else
+                printf("Nichya");
+    return 0;
+}
+
