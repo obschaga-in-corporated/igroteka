@@ -17,6 +17,16 @@ int power (int n)
     return 2 * power(n - 1);
 }
 
+int proverka (int answer)
+{  
+    if (answer < 0 || answer > 100)
+    {
+        printf ("FATAL ERROR! Пожалуйста, введите новое значение: \n");
+        scanf("%d", &answer);
+        answer = proverka (answer);
+    }
+    return answer;
+}   
 
 int stroke_user (int answer_user, int num)
 {
@@ -26,6 +36,7 @@ int stroke_user (int answer_user, int num)
         printf("У вас недолет \n");
     printf ("Введите новое число: \n");
     scanf("%d", &answer_user);
+    answer_user = proverka(answer_user);
       
     return answer_user;
 }
