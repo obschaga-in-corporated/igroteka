@@ -30,6 +30,30 @@ int stroke_user (int answer_user, int num)
     return answer_user;
 }
 
+int stroke_comp (int answer_comp, int num, int try)
+{ 
+    int stupen = power (try), i;
+    if (try == 5)
+    {
+        i = 1 + rand() % 2;
+        answer_comp += i;	    
+    }   
+    else
+    {
+        if (answer_comp > num)
+        {
+            printf("У компьютера перелет \n");
+	    answer_comp -= (50 / stupen);
+	}
+	else
+	{
+	    printf("У компьтера недолет \n");
+            answer_comp += (50 / stupen);
+        }
+    }
+    return answer_comp;
+}
+
 void games ()
 {
     int answer_user, num = number (), game, answer_comp= 50, tryCount = 0;    
@@ -40,6 +64,7 @@ void games ()
     {
         tryCount ++;
         printf ("Количество оставшихся попыток = %d\n", 6-tryCount);
+        answer_comp = stroke_comp(answer_comp, num, tryCount);
         answer_user = stroke_user(answer_user, num);
     }
 }
