@@ -2,26 +2,26 @@
 #include <time.h>
 #include <stdlib.h>
 #include "100.h"
-int proverka ( int Count, int Num)
+int trust ( int Count, int Num)
 {
     if (Num < 0 || Num > 10 || Num > Count)
     {
         printf("Неверно! Повторите ввод.\n");
         scanf("%d", &Num);
-        Num = proverka (Count, Num);
+        Num = trust (Count, Num);
     }
     return Num;
 }
-int output()
+int quit ()
 {
     int raz;
         printf("Если хотите сыграть - введите 1, нет - 0: \n");
         scanf("%d", &raz);
         if (raz != 1 && raz !=0)
-        raz=output();
+        raz = quit ();
     return raz;
 }
-int stroke_user(int Count)
+int progress_user(int Count)
 {
     int Num;
         printf("Ваш ход. На столе %d спичек.\n", Count);
@@ -31,17 +31,17 @@ int stroke_user(int Count)
         Count -= Num;
     return Count;
 }
-int stroke_comp(int Count)
+int progress_comp(int Count)
 {
     int Num;
-        Num = rand() % 10 + 1;
+        Num = rand () % 10 + 1;
         if (Num > Count || Count < 10)
         Num = Count;
         printf("Мой ход. Я взял %d спичек\n", Num);
         Count -= Num;
     return Count;
 }
-void rezult (int play)
+void finish (int play)
 {
     if (play == 1)
         printf("Вы проиграли!\n");
@@ -57,10 +57,10 @@ int games()
         {
             Player = 2;
             start = Count;
-            Count = stroke_user (Count);
+            Count = progress_user (Count);
             if (Count == start)
             {
-                game = output ();
+                game = quit ();
                 if (game == 1)
                     return 1;
                 else 
@@ -70,13 +70,13 @@ int games()
         else
         {
             Player = 1;
-            Count = stroke_comp(Count);
+            Count = progress_comp (Count);
 
         }
     }
 
-    rezult (Player);
-    game = output ();
+    finish (Player);
+    game = quit ();
     if (game == 1)
         return 1;
     else 
