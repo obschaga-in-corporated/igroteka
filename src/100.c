@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include "100.h"
 int proverka ( int Count, int Num)
 {
     if (Num < 0 || Num > 10 || Num > Count)
