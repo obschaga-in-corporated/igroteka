@@ -1,11 +1,11 @@
 #ifndef __100__
 #define __100__
 
-int proverka ( int Count, int Num);
-int output();
-int stroke_user(int Count);
-int stroke_comp(int Count);
-void rezult (int play);
+int trust ( int Count, int Num);
+int quit ();
+int progress_user(int Count);
+int progress_comp(int Count);
+void finish (int play);
 int games()
 
 
