@@ -87,7 +87,7 @@ void rezult (int answer_user, int answer_comp, int num)
         printf("Никто не выиграл.\n Правильный ответ: %d\n", num); 
 }       
 
-int games ()
+int condition ()
 {
     int answer_user, num = number (), game, answer_comp= 50, tryCount = 0;    
     printf("Введите число: \n");
