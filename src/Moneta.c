@@ -3,18 +3,19 @@
 #include <stdlib.h>
 int output() {
     int raz;
-    printf("Если хотите сыграть заново - введите -1, продолжить - 1, выйти - 0: \n");
-    scanf("%d", &raz);
-    if (raz!= 1 && raz!=0 && raz != -1)
-    raz=output();
+    printf ("Если хотите сыграть заново - введите -1, продолжить - 1, выйти - 0: \n");
+    scanf ("%d", &raz);
+    if (raz!= 1 && raz!=0 && raz != -1) {
+        raz=output();
+    }
     return raz;
 }
 int Kolichestvo() {
     int kol;
-    printf("Введите количество монет: ");
+    printf ("Введите количество монет: ");
     scanf ("%d", &kol);
     while (kol <0) {
-        printf("Ошибка. Введите количество монет: ");
+        printf ("Ошибка. Введите количество монет: ");
         scanf ("%d",&kol);
     }
     if (kol==0) {
@@ -39,8 +40,9 @@ int *Moneta(int kol, int moneta[]) {
 }
 int *mass(int kol, int b[]) {
     b = (int*)malloc((kol+1)*(sizeof(int)));
-    for (int i = 0; i < kol; i++)
-    b[i] = 0;
+    for (int i = 0; i < kol; i++) {
+        b[i] = 0;
+    }
     return b;
 }
 int youhod(int kol, int *b) {
@@ -64,4 +66,8 @@ int youhod(int kol, int *b) {
              }
     }
     return num;
+}
+int yousum(int num, int *moneta, int sumyou) {
+    sumyou = sumyou + moneta[num-1];
+    return sumyou;
 }
