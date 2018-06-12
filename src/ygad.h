@@ -9,7 +9,9 @@ int output();
 
 int proverka (int answer);
 
-int stroke_user (int answer_user, int num);
+void stroke_user (int answer_user, int num);
+
+int user_hod ();
 
 int stroke_comp (int answer_comp, int num, int try);
 

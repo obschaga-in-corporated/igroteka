@@ -7,13 +7,14 @@ int main()
     char d;
     printf("a. 100 спичек\n");
     printf("b. Угадайка\n");
-    printf("c. Правила\n");
-    printf("d. Выход\n");
+    printf("c. Счастливые монетки\n");
+    printf("d. Правила\n");
+    printf("e. Выход\n");
 
-    while(d != 'd') 
+    while(e != 'e') 
     {
-        d = getchar();
-        switch(d) 
+        e = getchar();
+        switch(e) 
         {
 
             case 'a': 
@@ -24,8 +25,9 @@ int main()
                     game=games();
                 printf("a. 100 спичек\n");
                 printf("b. Угадайка\n");
-                printf("c. Правила\n");
-                printf("d. Выход\n");
+                printf("c. Счастливые монетки\n");
+                printf("d. Правила\n");
+                printf("e. Выход\n");
                 break;
             }
 
@@ -37,12 +39,27 @@ int main()
 	            game = condition ();
                 printf("a. 100 спичек\n");
                 printf("b. Угадайка\n");
-                printf("c. Правила\n");
-                printf("d. Выход\n");
+                printf("c. Счастливые монетки\n");
+                printf("d. Правила\n");
+                printf("e. Выход\n");
+                break;
+            }
+            
+            case 'c': 
+            {
+                system("clear");
+                int game = association ();
+                while (game == 1)
+	            game = association ();
+                printf("a. 100 спичек\n");
+                printf("b. Угадайка\n");
+                printf("c. Счастливые монетки\n");
+                printf("d. Правила\n");
+                printf("e. Выход\n");
                 break;
             }
 
-            case 'c':
+            case 'd':
             {
                 system("clear");
                 printf("Угадай-ка:\n");
@@ -67,18 +84,28 @@ int main()
                 printf("(включительно). Количество ходов не ограничено. ");
                 printf("Выигрывает тот, кто последним заберет из кучи оставшиеся спички.\n");
 
+                printf("Счастливые монетки:\n");
+                printf("Вы в ачале игры вводите количество монет.");
+                printf("Затем поочереди с компьютером вы переворачиваете ");
+                printf("по одной монете. Каждая монета определена совей стоимостью,");
+                printf("которая может варьироваться от -100 до 100. ");
+                printf("Вам присуждается количество баллов равное сумме стоимостей");
+                printf("выбранных вами монет. ");
+                printf("Ваша задача состоит в том, чтобы набрать количество очков большее, чем у компьютера.\n");
+
                 printf("a. 100 спичек\n");
                 printf("b. Угадайка\n");
-                printf("c. Правила\n");
-                printf("d. Выход\n");
+                printf("c. Счастливые монетки\n");
+                printf("d. Правила\n");
+                printf("e. Выход\n");
                 break;
             }
-            case 'd':
+            case 'e':
             return 0;
 
             default: 
             {
-                if(d != 10) 
+                if(e != 10) 
                     printf("Неверный ввод, попробуйте еще раз.\n");
                 printf("\n");
                 break;
