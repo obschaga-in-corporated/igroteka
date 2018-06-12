@@ -3,6 +3,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+CTEST(number_suite, numb) 
+{
+    
+    //WHEN
+    int rezult = number(); 
+
+    ASSERT_INTERVAL(1, 100, rezult);
+}
+
 CTEST(power_suite, stupen) 
 {
     //GIVEN
