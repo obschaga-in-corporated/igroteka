@@ -96,4 +96,16 @@ CTEST(stroke_comp_suite, comp)
     ASSERT_EQUAL(expected, rezult);
 }
 
+CTEST(stroke_comp_suite, comp_5try) 
+{
+    //GIVEN
+    int answer_comp=16;
+    int num=17;
+    int try=5;
+    
+    //WHEN
+    int rezult = stroke_comp(answer_comp,num,try); 
+
+    ASSERT_INTERVAL(17,18, rezult);
+}
 
