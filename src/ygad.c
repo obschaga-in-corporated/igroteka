@@ -95,9 +95,7 @@ void rezult (int answer_user, int answer_comp, int num)
 int condition ()
 {
     int answer_user, num = number (), game, answer_comp= 50, tryCount = 0;    
-    printf("Введите число: \n");
-    scanf("%d", &answer_user);
-    answer_user = proverka (answer_user);
+  answer_user=user_hod();
     if (answer_user == 0)
     {
         game = output ();
