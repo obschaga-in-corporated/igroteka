@@ -14,9 +14,10 @@ int trust ( int Count, int Num)
 int quit ()
 {
     int raz;
-        printf("Если хотите сыграть - введите 1, нет - 0: \n");
+        printf("Если хотите сыграть заново - введите -1,");
+        printf("пролдолжить - 1, выйти - 0: \n");
         scanf("%d", &raz);
-        if (raz != 1 && raz !=0) {
+        if (raz != 1 && raz !=0  && raz != -1) {
         raz = quit ();
         }
     return raz;
