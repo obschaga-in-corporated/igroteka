@@ -79,4 +79,8 @@ int comphod(int kol, int *b) {
     }
     return num;
 }
+int compsum(int num, int *moneta, int sumcomp) {
+    sumcomp = sumcomp + moneta[num-1];
+    return sumcomp;
+}
 
