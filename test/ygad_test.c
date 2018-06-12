@@ -83,12 +83,12 @@ CTEST(user_hod_suite, hod_user)
 CTEST(stroke_comp_suite, comp) 
 {
     //GIVEN
-    int answer_comp=75;
-    int num=79;
-    int try=3;
+    int answer_comp = 75;
+    int num = 79;
+    int try = 3;
     
     //WHEN
-    int rezult = stroke_comp(answer_comp,num,try); 
+    int rezult = stroke_comp(answer_comp, num, try); 
     
     //THEN
     int expected = 81;
@@ -99,13 +99,13 @@ CTEST(stroke_comp_suite, comp)
 CTEST(stroke_comp_suite, comp_5try) 
 {
     //GIVEN
-    int answer_comp=16;
-    int num=17;
-    int try=5;
+    int answer_comp = 16;
+    int num = 17;
+    int try = 5;
     
     //WHEN
-    int rezult = stroke_comp(answer_comp,num,try); 
+    int rezult = stroke_comp(answer_comp, num, try); 
 
-    ASSERT_INTERVAL(17,18, rezult);
+    ASSERT_INTERVAL(17, 18, rezult);
 }
 
