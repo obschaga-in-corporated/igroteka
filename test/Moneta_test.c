@@ -13,3 +13,11 @@ CTEST (Moneta, Correct) {
     moneta = Moneta(kol, moneta);
     ASSERT_INTERVAL (-100, 100, *moneta);
 }
+CTEST (Mass, Correct) {
+    int kol = 5;
+    int *b=NULL;
+    b = mass(kol, b);
+    for(int i=0; i<kol;i++) {
+        ASSERT_EQUAL (0, b[i]);
+    }
+}
