@@ -55,3 +55,11 @@ CTEST (Hodcomp1, Correct) {
     num = comphod (kol, b);
     ASSERT_INTERVAL (1, 4, num);
 }
+CTEST (Sumcomp, Correct) {
+    int num = 1;
+    int *moneta=NULL;
+    int sumcomp = 0;
+    moneta=Moneta(2, moneta);
+    sumcomp = compsum (num, moneta, sumcomp);
+    ASSERT_INTERVAL (-100, 100, sumcomp);
+}
