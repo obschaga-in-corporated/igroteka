@@ -83,4 +83,16 @@ int compsum(int num, int *moneta, int sumcomp) {
     sumcomp = sumcomp + moneta[num-1];
     return sumcomp;
 }
+void comparison(int sumyou, int sumcomp) {
+    printf ("Твоя сумма = %d\n Сумма компьютера = %d\n", sumyou, sumcomp);
+    if (sumcomp < sumyou) {
+        printf ("Вы победили\n");
+    }
+    if (sumcomp > sumyou) {
+        printf ("Вы проиграли\n");
+    }
+    if (sumcomp == sumyou) {
+        printf ("Ничья\n");
+    }
+}
 
