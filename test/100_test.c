@@ -13,3 +13,9 @@ CTEST(progress_user_suite, progress)
     int rezult = progress_user(answer);
     ASSERT_INTERVAL(90, 99, rezult);
 }
+CTEST(progress_user_prog_suite, progress)
+{
+    int answer = 56;
+    int rezult = progress_user(answer);
+    ASSERT_INTERVAL(-46,55, rezult);
+}
