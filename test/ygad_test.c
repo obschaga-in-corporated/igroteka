@@ -49,6 +49,17 @@ CTEST(proverka_suite, trust)
     ASSERT_EQUAL(expected, rezult);
 }
 
+CTEST(proverka_suite, otr_value) 
+{
+    //GIVEN
+    int answer = -16;
+    
+    //WHEN
+    int rezult = proverka(answer); 
+
+    ASSERT_INTERVAL(1, 100, rezult);
+}
+
 CTEST(stroke_comp_suite, comp) 
 {
     //GIVEN
