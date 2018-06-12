@@ -37,4 +37,9 @@ int *Moneta(int kol, int moneta[]) {
     }
     return moneta;
 }
-
+int *mass(int kol, int b[]) {
+    b = (int*)malloc((kol+1)*(sizeof(int)));
+    for (int i = 0; i < kol; i++)
+    b[i] = 0;
+    return b;
+}
