@@ -19,3 +19,10 @@ CTEST(progress_user_prog_suite, progress)
     int rezult = progress_user(answer);
     ASSERT_INTERVAL(-46,55, rezult);
 }
+CTEST (Trust, Correct)
+{
+    int Count = 11;
+    int Num = 11;
+    Num = trust (Count, Num);
+    ASSERT_INTERVAL (1, 10, Num);
+}
