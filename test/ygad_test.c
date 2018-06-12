@@ -26,6 +26,15 @@ CTEST(power_suite, stupen)
     ASSERT_EQUAL(expected, rezult);
 }
 
+CTEST(output_suite, out) 
+{
+
+    //WHEN
+    int rezult = output(); 
+
+    ASSERT_INTERVAL(-1, 1, rezult);
+}
+
 CTEST(proverka_suite, trust) 
 {
     //GIVEN
