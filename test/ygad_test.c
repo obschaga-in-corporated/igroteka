@@ -16,3 +16,19 @@ CTEST(power_suite, stupen)
 
     ASSERT_EQUAL(expected, rezult);
 }
+
+CTEST(proverka_suite, trust) 
+{
+    //GIVEN
+    int a = 58;
+    
+    //WHEN
+    int rezult = proverka(a); 
+    
+    //THEN
+    int expected = 58;
+
+    ASSERT_EQUAL(expected, rezult);
+}
+
+
