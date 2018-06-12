@@ -95,4 +95,45 @@ void comparison(int sumyou, int sumcomp) {
         printf ("Ничья\n");
     }
 }
-
+int association() {
+    int *moneta = NULL;
+    int *b = NULL;
+    int n, kol, num = 0, sumyou =0, sumcomp = 0, game = 0;
+    srand (time(NULL));
+    kol = Kolichestvo();
+    if (kol == 0) {
+        return 0;
+    }
+    else if (kol == -1) {
+        return 1;
+    }
+    n = kol;
+    moneta = Moneta(kol, moneta);
+    b = mass(kol, b);
+    while (n != 0) {
+        num = youhod(kol, b);
+        if (num == 0) {
+            return 0;
+        }
+        else if (num == -1) {
+            return 1;
+        }
+        sumyou = yousum(num, moneta, sumyou);
+        b[num-1] = 1;
+        n--;
+        if (n == 0) break;
+        num = comphod(kol, b);
+        printf ("%d\n", num);
+        sumcomp = compsum(num, moneta, sumcomp);
+        b[num-1] = 1;
+        n--;
+    }
+    comparison(sumyou, sumcomp);
+    game = output ();
+    if (game == 1 || game == -1) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
