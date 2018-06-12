@@ -43,3 +43,25 @@ int *mass(int kol, int b[]) {
     b[i] = 0;
     return b;
 }
+int youhod(int kol, int *b) {
+    int num;
+    printf ("Введите номер монеты: ");
+    scanf ("%d",&num);
+    while (b[num-1] == 1 || num > kol || num < 0) {
+        printf ("Ошибка. Введите номер монеты: ");
+        scanf ("%d",&num);
+    }
+    if (num==0) {
+        int game = output ();
+        if (game == 0) {
+            return 0;
+        }
+        else if (game ==1) {
+            num = youhod(kol,b);
+        }
+             else {
+                 return -1;
+             }
+    }
+    return num;
+}
