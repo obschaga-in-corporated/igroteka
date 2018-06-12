@@ -21,3 +21,9 @@ CTEST (Mass, Correct) {
         ASSERT_EQUAL (0, b[i]);
     }
 }
+CTEST (Hodyou, Correct) {
+    int kol = 5;
+    int b[5] = {1, 1, 0, 1, 1};
+    int num = youhod (kol, b);
+    ASSERT_EQUAL (3, num);
+}
