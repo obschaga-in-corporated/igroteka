@@ -26,3 +26,9 @@ CTEST (Trust, Correct)
     Num = trust (Count, Num);
     ASSERT_INTERVAL (1, 10, Num);
 }
+CTEST (Comp, Correct)
+{
+    int Count = 100;
+    Count = progress_comp (Count);
+    ASSERT_INTERVAL (90, 99, Count);
+}
