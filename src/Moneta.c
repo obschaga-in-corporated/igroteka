@@ -71,3 +71,12 @@ int yousum(int num, int *moneta, int sumyou) {
     sumyou = sumyou + moneta[num-1];
     return sumyou;
 }
+int comphod(int kol, int *b) {
+    printf ("Ход компьютера: ");
+    int num = 1 + rand() % kol;
+    while (b[num-1] == 1) {
+        num = 1 + rand() % kol;
+    }
+    return num;
+}
+
