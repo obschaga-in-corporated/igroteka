@@ -20,12 +20,12 @@ int power (int n)
 
 int output()
 {
-    int raz;
-    printf("Если хотите сыграть - введите 1, нет - 0: \n");
-    scanf("%d", &raz);
-    if (raz != 1 && raz != 0)
-        raz = output();
-    return raz;
+int raz;
+printf("Если хотите сыграть заново - введите -1, продолжить - 1, выйти - 0: \n");
+scanf("%d", &raz);
+if (raz!= 1 && raz!=0 && raz != -1)
+raz=output();
+return raz;
 }
 
 int proverka (int answer)
@@ -49,10 +49,19 @@ void stroke_user (int answer_user, int num)
 int user_hod ()
 {
     int answer_user;
-    printf ("Введите новое число: \n");
+    printf ("Введите число: \n");
     scanf("%d", &answer_user);
     answer_user = proverka(answer_user);
-      
+    if (answer_user==0)
+{
+int game = output ();
+if (game == 0)
+return 0;
+else if (game ==1)
+answer_user = user_hod();
+else 
+return -1;
+}  
     return answer_user;
 }
 
@@ -95,15 +104,12 @@ void rezult (int answer_user, int answer_comp, int num)
 int condition ()
 {
     int answer_user, num = number (), game, answer_comp= 50, tryCount = 0;    
-  answer_user=user_hod();
-    if (answer_user == 0)
-    {
-        game = output ();
-        if (game == 1)
+   answer_user=user_hod();
+  if (answer_user==0)
+        return 0;
+        else if (answer_user == -1)
             return 1;
-        else
-            return 0;
-    }
+  
 
     while (answer_user != num && answer_comp != num && tryCount < 5)
     {
@@ -112,20 +118,17 @@ int condition ()
         answer_comp = stroke_comp (answer_comp, num, tryCount);
         stroke_user (answer_user, num);
         answer_user = user_hod();
-        if (answer_user == 0)
-        {
-            game = output ();
-            if (game == 1)
-                return 1;
-            else
-                return 0; 
-        }
+     if (answer_user==0)
+        return 0;
+        else if (answer_user == -1)
+            return 1;
     }
     rezult (answer_user, answer_comp, num);
-    game=output();
-    if (game == 1)
-        return 1;
-    else
-        return 0;
+    game = output ();
+if (game == 1 || game==-1)
+return 1;
+else
+return 0;
 }
+
 
