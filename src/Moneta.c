@@ -9,3 +9,22 @@ int output() {
     raz=output();
     return raz;
 }
+int Kolichestvo() {
+    int kol;
+    printf("Введите количество монет: ");
+    scanf ("%d", &kol);
+    while (kol <0) {
+        printf("Ошибка. Введите количество монет: ");
+        scanf ("%d",&kol);
+    }
+    if (kol==0) {
+        int game = output ();
+        if (game == 0)
+        return 0;
+        else if (game ==1)
+        kol = Kolichestvo();
+        else
+        return -1;
+    }
+    return kol;
+}
