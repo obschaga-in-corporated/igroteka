@@ -48,3 +48,10 @@ CTEST (Hodcomp, Correct) {
     num = comphod (kol, b);
     ASSERT_EQUAL (4, num);
 }
+CTEST (Hodcomp1, Correct) {
+    int b[4]={0, 0, 0, 0};
+    int kol = 4;
+    int num;
+    num = comphod (kol, b);
+    ASSERT_INTERVAL (1, 4, num);
+}
