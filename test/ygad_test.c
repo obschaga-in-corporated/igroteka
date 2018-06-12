@@ -60,6 +60,17 @@ CTEST(proverka_suite, otr_value)
     ASSERT_INTERVAL(1, 100, rezult);
 }
 
+CTEST(proverka_suite, big_value) 
+{
+    //GIVEN
+    int answer = 456;
+    
+    //WHEN
+    int rezult = proverka(answer); 
+
+    ASSERT_INTERVAL(1, 100, rezult);
+}
+
 CTEST(stroke_comp_suite, comp) 
 {
     //GIVEN
