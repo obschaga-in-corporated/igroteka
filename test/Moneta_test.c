@@ -41,3 +41,10 @@ CTEST (Sumyou, Correct) {
     sumyou = yousum (num, moneta, sumyou);
     ASSERT_INTERVAL (-100, 100, sumyou);
 }
+CTEST (Hodcomp, Correct) {
+    int b[4]={1, 1, 1, 0};
+    int kol = 4;
+    int num;
+    num = comphod (kol, b);
+    ASSERT_EQUAL (4, num);
+}
