@@ -71,6 +71,15 @@ CTEST(proverka_suite, big_value)
     ASSERT_INTERVAL(1, 100, rezult);
 }
 
+CTEST(user_hod_suite, hod_user) 
+{
+ 
+    //WHEN
+    int rezult = user_hod(); 
+
+    ASSERT_INTERVAL(1, 100, rezult);
+}
+
 CTEST(stroke_comp_suite, comp) 
 {
     //GIVEN
