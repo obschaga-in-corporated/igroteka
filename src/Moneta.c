@@ -19,12 +19,22 @@ int Kolichestvo() {
     }
     if (kol==0) {
         int game = output ();
-        if (game == 0)
-        return 0;
-        else if (game ==1)
-        kol = Kolichestvo();
-        else
-        return -1;
-    }
+        if (game == 0) {
+            return 0;
+        }
+        else if (game ==1) {
+            kol = Kolichestvo();
+        }
+             else {
+                 return -1;
+             }
     return kol;
 }
+int *Moneta(int kol, int moneta[]) {
+    moneta = (int*)malloc((kol+1)*(sizeof(int)));
+    for (int i = 0; i < kol; i++) {
+        moneta[i] = rand() % (100 + 100 + 1) - 100;
+    }
+    return moneta;
+}
+
