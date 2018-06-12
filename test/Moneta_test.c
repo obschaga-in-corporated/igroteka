@@ -27,3 +27,9 @@ CTEST (Hodyou, Correct) {
     int num = youhod (kol, b);
     ASSERT_EQUAL (3, num);
 }
+CTEST (Hodyou1, Correct) {
+    int kol = 5;
+    int b[5] = {0, 0, 0, 0, 0};
+    int num = youhod (kol, b);
+    ASSERT_INTERVAL (-1, 5, num);
+}
