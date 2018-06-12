@@ -31,4 +31,20 @@ CTEST(proverka_suite, trust)
     ASSERT_EQUAL(expected, rezult);
 }
 
+CTEST(stroke_comp_suite, comp) 
+{
+    //GIVEN
+    int answer_comp=75;
+    int num=79;
+    int try=3;
+    
+    //WHEN
+    int rezult = stroke_comp(answer_comp,num,try); 
+    
+    //THEN
+    int expected = 81;
+
+    ASSERT_EQUAL(expected, rezult);
+}
+
 
