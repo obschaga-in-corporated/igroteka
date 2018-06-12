@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include "ygad.h"
 
 int number ()
 {
@@ -19,12 +20,12 @@ int power (int n)
 
 int output()
 {
-    int raz;
-    printf("Если хотите сыграть - введите 1, нет - 0: \n");
-    scanf("%d", &raz);
-    if (raz != 1 && raz != 0)
-        raz = output();
-    return raz;
+int raz;
+printf("Если хотите сыграть заново - введите -1, продолжить - 1, выйти - 0: \n");
+scanf("%d", &raz);
+if (raz!= 1 && raz!=0 && raz != -1)
+raz=output();
+return raz;
 }
 
 int proverka (int answer)
@@ -38,16 +39,29 @@ int proverka (int answer)
     return answer;
 }   
 
-int stroke_user (int answer_user, int num)
+void stroke_user (int answer_user, int num)
 {
     if (answer_user > num)
         printf("У вас перелет \n");
     else
         printf("У вас недолет \n");
-    printf ("Введите новое число: \n");
+}
+int user_hod ()
+{
+    int answer_user;
+    printf ("Введите число: \n");
     scanf("%d", &answer_user);
     answer_user = proverka(answer_user);
-      
+    if (answer_user==0)
+{
+int game = output ();
+if (game == 0)
+return 0;
+else if (game ==1)
+answer_user = user_hod();
+else 
+return -1;
+}  
     return answer_user;
 }
 
@@ -87,41 +101,34 @@ void rezult (int answer_user, int answer_comp, int num)
         printf("Никто не выиграл.\n Правильный ответ: %d\n", num); 
 }       
 
-int games ()
+int condition ()
 {
     int answer_user, num = number (), game, answer_comp= 50, tryCount = 0;    
-    printf("Введите число: \n");
-    scanf("%d", &answer_user);
-    answer_user = proverka (answer_user);
-    if (answer_user == 0)
-    {
-        game = output ();
-        if (game == 1)
+   answer_user=user_hod();
+  if (answer_user==0)
+        return 0;
+        else if (answer_user == -1)
             return 1;
-        else
-            return 0;
-    }
+  
 
     while (answer_user != num && answer_comp != num && tryCount < 5)
     {
         tryCount ++;
         printf ("Количество оставшихся попыток = %d\n", 6-tryCount);
         answer_comp = stroke_comp (answer_comp, num, tryCount);
-        answer_user = stroke_user (answer_user, num);
-        if (answer_user == 0)
-        {
-            game = output ();
-            if (game == 1)
-                return 1;
-            else
-                return 0; 
-        }
+        stroke_user (answer_user, num);
+        answer_user = user_hod();
+     if (answer_user==0)
+        return 0;
+        else if (answer_user == -1)
+            return 1;
     }
     rezult (answer_user, answer_comp, num);
-    game=output();
-    if (game == 1)
-        return 1;
-    else
-        return 0;
+    game = output ();
+if (game == 1 || game==-1)
+return 1;
+else
+return 0;
 }
+
 
