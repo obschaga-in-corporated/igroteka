@@ -28,12 +28,13 @@ int progress_user (int Count) {
     Num = trust (Count, Num);
     if (Num == 0) {
         int game = quit ();
-        if (game == 0) {
-            return 0;
-        } else if (game == 1) {
+        if (game == 1) {
             Count = progress_user (Count);
-        } else {
+            //return 0;
+        } else if (game == -1) {
             return -1;
+        
+            
         }
     }
     Count = Count - Num;
