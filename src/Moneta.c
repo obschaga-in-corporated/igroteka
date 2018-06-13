@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-int output() {
+int out() {
     int raz;
     printf ("Если хотите сыграть заново - введите -1, продолжить - 1, выйти - 0: \n");
     scanf ("%d", &raz);
     if (raz!= 1 && raz!=0 && raz != -1) {
-        raz=output();
+        raz=out();
     }
     return raz;
 }
@@ -19,7 +19,7 @@ int Kolichestvo() {
         scanf ("%d",&kol);
     }
     if (kol==0) {
-        int game = output ();
+        int game = out ();
         if (game == 0) {
             return 0;
         }
@@ -55,7 +55,7 @@ int youhod(int kol, int *b) {
         scanf ("%d",&num);
     }
     if (num==0) {
-        int game = output ();
+        int game = out ();
         if (game == 0) {
             return 0;
         }
@@ -130,7 +130,7 @@ int association() {
         n--;
     }
     comparison(sumyou, sumcomp);
-    game = output ();
+    game = out ();
     if (game == 1 || game == -1) {
         return 1;
     }
