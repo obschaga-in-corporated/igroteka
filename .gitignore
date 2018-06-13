@@ -1,4 +1,6 @@
-build/100_test.o
-build/Moneta_test.o
-build/main.o
-build/ygad_test.o
+/build/100_test.o
+/build/Moneta_test.o
+/build/main.o
+/build/ygad_test.o
+/bin/test
+/bin/libIgro.so
