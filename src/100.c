@@ -58,12 +58,13 @@ void finish (int play) {
 }
 int games ()
 {
-    int Count = 100, Player = 1, game;
+    int Count = 100, Player = 1, game, start;
     while (Count > 0) {
         if (Player == 1) {
             Player = 2;
+            start = Count;
             Count = progress_user (Count);
-            if (Count == 0) {
+            if (Count == start) {
                 return 0;
             } else if (Count == -1) {
                 return 1;
@@ -72,6 +73,7 @@ int games ()
             Player = 1;
             Count = progress_comp (Count);
         }
+
     }
     finish (Player);
     game = quit ();
@@ -81,3 +83,4 @@ int games ()
         return 0;
     }
 }
+
