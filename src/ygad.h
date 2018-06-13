@@ -17,6 +17,6 @@ int stroke_comp (int answer_comp, int num, int try);
 
 void rezult (int answer_user, int answer_comp, int num);
 
-int games ();
+int condition ();
 
 #endif
