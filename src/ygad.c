@@ -96,8 +96,8 @@ void rezult (int answer_user, int answer_comp, int num)
         printf ("Поздравляем! Вы победили! \n"); 
     }
     if (answer_user != num && answer_comp == num) {
-        printf ("Вы проиграли! Попробуйте еще раз...\n 
-                Правильный ответ: %d\n", num);
+        printf ("Вы проиграли! Попробуйте еще раз...\n"); 
+        printf ("Правильный ответ: %d\n", num);
     }
     if (answer_user == num && answer_comp == num) {
         printf("Ничья!\n");
