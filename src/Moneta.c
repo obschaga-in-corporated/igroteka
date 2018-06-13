@@ -29,6 +29,7 @@ int Kolichestvo() {
              else {
                  return -1;
              }
+    }
     return kol;
 }
 int *Moneta(int kol, int moneta[]) {
