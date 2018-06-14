@@ -5,8 +5,8 @@
 
 CTEST (Trust, Correct)
 {
-    int Count = 11;
-    int Num = 11;
+    int Count = 9;
+    int Num = 9;
     Num = trust (Count, Num);
     ASSERT_INTERVAL (1, 10, Num);
 }
