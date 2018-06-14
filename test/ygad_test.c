@@ -26,15 +26,6 @@ CTEST(power_suite, stupen)
     ASSERT_EQUAL(expected, rezult);
 }
 
-CTEST(output_suite, out) 
-{
-
-    //WHEN
-    int rezult = output(); 
-
-    ASSERT_INTERVAL(-1, 1, rezult);
-}
-
 CTEST(proverka_suite, trust) 
 {
     //GIVEN
@@ -49,36 +40,6 @@ CTEST(proverka_suite, trust)
     ASSERT_EQUAL(expected, rezult);
 }
 
-CTEST(proverka_suite, otr_value) 
-{
-    //GIVEN
-    int answer = -16;
-    
-    //WHEN
-    int rezult = proverka(answer); 
-
-    ASSERT_INTERVAL(1, 100, rezult);
-}
-
-CTEST(proverka_suite, big_value) 
-{
-    //GIVEN
-    int answer = 456;
-    
-    //WHEN
-    int rezult = proverka(answer); 
-
-    ASSERT_INTERVAL(1, 100, rezult);
-}
-
-CTEST(user_hod_suite, hod_user) 
-{
- 
-    //WHEN
-    int rezult = user_hod(); 
-
-    ASSERT_INTERVAL(1, 100, rezult);
-}
 
 CTEST(stroke_comp_suite, comp) 
 {
