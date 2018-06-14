@@ -1,3 +1,7 @@
 language: c
 compiler: gcc
-skript: make test
+skript:
+    -cd bin
+    -export LD_LIBRARY_PATH=.
+    -cd ..    
+    -make test
