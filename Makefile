@@ -34,7 +34,6 @@ bin/libIgro.so:  src/ygad.c src/100.c src/Moneta.c src/ygad.h src/100.h src/Mone
 
 bin/menu: menu.c src/ygad.c src/100.c src/Moneta.c bin/libIgro.so	
 	gcc -Wall menu.c -fPIC -L./bin -lIgro -o bin/menu -Isrc -Ibin
-	export LD_LIBRARY_PATH=./bin
 
 .PHONY: clean
 clean:
